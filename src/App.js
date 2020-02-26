@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Gameboard from './components/gameboard.js'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </header>
       <body>
         <p>Clues and Game Placeholder</p>
+        <Gameboard/>
       </body>
     </div>
   );

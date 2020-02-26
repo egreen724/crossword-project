@@ -12,3 +12,16 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+table {
+  width: 70%;
+  margin: auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td {
+  min-width: 30px;
+  height: 30px;
+  border: 1px solid black;
+}
