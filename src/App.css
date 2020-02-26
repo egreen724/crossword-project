@@ -29,3 +29,10 @@ td {
 .empty {
   background-color: #282c34;
 }
+
+.clues {
+  display: inline-block;
+  text-align: left;
+  max-width: 50%;
+  padding: 15px; 
+}
