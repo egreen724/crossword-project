@@ -12,15 +12,15 @@ export default class Clues extends Component {
     let clues =  <div>
       <div className="clues">
         <h3>Across </h3>
-        {this.state.across.map(clue => {
-           return <p> {clue} </p>
+        {this.state.across.map((clue, index) => {
+           return <p key={index}> {clue} </p>
         })}
       </div>
 
       <div className="clues">
         <h3>Down </h3>
-        {this.state.down.map(clue => {
-           return <p> {clue} </p>
+        {this.state.down.map((clue, index) => {
+           return <p key={index}> {clue} </p>
         })}
       </div>
     </div>
