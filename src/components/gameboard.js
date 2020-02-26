@@ -9,7 +9,7 @@ class Gameboard extends Component {
           if (cell === 0) {
             return <td key={index} className="empty"> </td>
           } else {
-            return <td key={index} className="input"> </td>
+            return <td key={index} className="input"><input type='text' maxlength= "1"></input> </td>
           }
         })
          return <tr key={index}>{boardCells}</tr>
