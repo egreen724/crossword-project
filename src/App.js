@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Gameboard from './components/gameboard.js'
+import Clues from './components/clues.js'
 
 function App() {
   return (
@@ -8,10 +9,10 @@ function App() {
       <header className="App-header">
         <h2>Crossword Puzzle</h2>
       </header>
-      <body>
-        <p>Clues and Game Placeholder</p>
+      <div>
+        <Clues/>
         <Gameboard/>
-      </body>
+      </div>
     </div>
   );
 }

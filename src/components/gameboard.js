@@ -21,15 +21,15 @@ class Gameboard extends Component {
 
   renderBoard = () => {
 
-    let boardRows = this.state.board.map(row => {
-        let boardCells = row.map(cell => {
+    let boardRows = this.state.board.map((row, index) => {
+        let boardCells = row.map((cell, index) => {
           if (cell === 0) {
-            return <td className="empty"> </td>
+            return <td key={index} className="empty"> </td>
           } else {
-            return <td className="input"> </td>
+            return <td key={index} className="input"> </td>
           }
         })
-         return <tr>{boardCells}</tr>
+         return <tr key={index}>{boardCells}</tr>
       })
       return boardRows
     }
@@ -40,7 +40,9 @@ class Gameboard extends Component {
     return (
       <div>
         <table id="board" >
-          {this.renderBoard()}
+          <tbody>
+            {this.renderBoard()}
+          </tbody>
         </table>
       </div>
     )
