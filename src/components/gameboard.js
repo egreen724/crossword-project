@@ -20,79 +20,28 @@ class Gameboard extends Component {
   }
 
   renderBoard = () => {
-    return <div>
-        <table className="board">
-          <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-          </tr>
-          <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-          </tr>
-          <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-          </tr>
+
+    let boardRows = this.state.board.map(row => {
+        let boardCells = row.map(cell => {
+          if (cell === 0) {
+            return <td className="empty"> </td>
+          } else {
+            return <td className="input"> </td>
+          }
+        })
+         return <tr>{boardCells}</tr>
+      })
+      return boardRows
+    }
 
 
-        </table>
-      </div>
-  }
 
   render() {
     return (
       <div>
-        {this.renderBoard()}
-
+        <table id="board" >
+          {this.renderBoard()}
+        </table>
       </div>
     )
   }
