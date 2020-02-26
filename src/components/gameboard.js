@@ -4,7 +4,7 @@ class Gameboard extends Component {
 
   renderBoard = () => {
 
-    let boardRows = this.state.board.map((row, index) => {
+    let boardRows = this.props.board.map((row, index) => {
         let boardCells = row.map((cell, index) => {
           if (cell === 0) {
             return <td key={index} className="empty"> </td>
