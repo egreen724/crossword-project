@@ -1,18 +1,7 @@
 import React, { Component } from 'react'
+import Square from './square.js'
 
 class Gameboard extends Component {
-
-  state = {
-    input: ''
-  }
-
-  handleChange = (e) => {
-    const userInput = e.target.value;
-
-    this.setState({
-      input: userInput
-    })
-  }
 
   renderBoard = () => {
 
@@ -21,23 +10,18 @@ class Gameboard extends Component {
           if (cell === 0) {
             return <td key={index} className="empty"> </td>
           } else {
+
             let label = null
-            let label2 = null
+
             if (cell.includes(',')) {
                label = parseInt(cell.split(',')[0])
-               label2 = parseInt(cell.split(',')[1])
             } else {
                label = parseInt(cell)
             }
 
-            return <td key={label} className="input">
-              <input onChange={this.handleChange}
-                    value={this.state.input}
-                    placeholder={label}
-                    type='text'
-                    maxlength= "1">
-              </input>
-            </td>
+            return <Square label={label} />
+
+
           }
         })
          return <tr key={index}>{boardCells}</tr>
