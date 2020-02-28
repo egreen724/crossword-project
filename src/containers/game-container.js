@@ -22,7 +22,11 @@ class GameContainer extends Component {
     clues: {
         across: ["6. City that is home to the oldest university in Europe", "7. Holiday preceding the season of Lent", "8. Highest peak in North America", "9. 2009 Super Bowl victors", "10. Book by Jane Austen featuring Frederick and Anne"],
         down: ["1. National park that is home to El Capitan and Half Dome", "2. Programming language developed by Yukihiro Matsumoto 'to make programmers happy'", "3. US city originally called Terminus", "4. Henri who developed the artistic style of fauvism", "5. Movie with the last line 'This is the beginning of a beautiful friendship'"]
-    }
+    },
+
+    answers:
+      ['yosemite', 'ruby', 'Atlanta', 'Matisse', 'Casablanca', 'Bologna', 'Mardigras', 'Denali', 'Saints', 'Persuasion']
+
   }
 
   render() {

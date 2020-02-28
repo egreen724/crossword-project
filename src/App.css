@@ -14,11 +14,21 @@
 }
 
 table {
+
   height: auto;
   margin: auto;
   border: 1px solid #282c34;
   border-collapse: collapse;
 }
+
+/* @media only screen and (min-width: 600px) {
+  table {}
+
+}
+
+@media only screen and (min-width: 768px) {
+  #table {width: 500px;}
+} */
 
 td {
   width: 40px;
@@ -45,7 +55,8 @@ input {
   height: 40px;
   margin: 0px;
   padding: 2px;
-  font-size: 2em; 
+  font-size: 2em;
+  text-align: center; 
 }
 
 input[type=text]:focus {

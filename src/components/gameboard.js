@@ -9,7 +9,16 @@ class Gameboard extends Component {
           if (cell === 0) {
             return <td key={index} className="empty"> </td>
           } else {
-            return <td key={index} className="input"><input type='text' maxlength= "1"></input> </td>
+            let label = null
+            let label2 = null 
+            if (cell.includes(',')) {
+               label = parseInt(cell.split(',')[0])
+               label2 = parseInt(cell.split(',')[1])
+            } else {
+               label = parseInt(cell)
+            }
+
+            return <td key={label} className="input"><input placeholder={label} type='text' maxlength= "1"></input> </td>
           }
         })
          return <tr key={index}>{boardCells}</tr>
