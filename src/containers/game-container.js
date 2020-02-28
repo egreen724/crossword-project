@@ -25,15 +25,22 @@ class GameContainer extends Component {
     },
 
     answers:
-      ['yosemite', 'ruby', 'Atlanta', 'Matisse', 'Casablanca', 'Bologna', 'Mardigras', 'Denali', 'Saints', 'Persuasion']
+      ['yosemite', 'ruby', 'Atlanta', 'Matisse', 'Casablanca', 'Bologna', 'Mardigras', 'Denali', 'Saints', 'Persuasion'],
+    userAnswer: ''
 
+  }
+
+  setUserAnswer = (userInput) => {
+    this.setState({
+      userAnswer: this.state.userAnswer.concat(userInput)
+    })
   }
 
   render() {
     return (
       <div>
         <Clues clues={this.state.clues}/>
-        <Gameboard board={this.state.board}/>
+        <Gameboard setUserAnswer={this.setUserAnswer} board={this.state.board}/>
       </div>
     )
   }

@@ -3,6 +3,8 @@ import Square from './square.js'
 
 class Gameboard extends Component {
 
+
+
   renderBoard = () => {
 
     let boardRows = this.props.board.map((row, index) => {
@@ -19,7 +21,7 @@ class Gameboard extends Component {
                label = parseInt(cell)
             }
 
-            return <Square label={label} />
+            return <Square setUserAnswer={this.props.setUserAnswer} key={index} label={label} />
 
 
           }

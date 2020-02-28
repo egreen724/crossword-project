@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 class Square extends Component {
 
   state = {
-    input: '',
-    answer: ''
+    input: ''
   }
 
   handleChange = (e) => {
@@ -12,10 +11,12 @@ class Square extends Component {
 
     this.setState({
       input: userInput,
-      answer: this.state.answer.concat(userInput)
+
     })
 
-    console.log(this.state.answer)
+    this.props.setUserAnswer(userInput)
+    console.log(this.state.input)
+    // add logic to move to next input and a callback function to pass answer up to parent
   }
 
 
@@ -23,11 +24,12 @@ class Square extends Component {
     return(
       <>
         <td key={this.props.label} className="input">
-          <input onChange={this.handleChange}
-                value={this.state.input}
-                placeholder={this.props.label}
-                type='text'
-                maxlength= "1">
+          <input
+            onChange={this.handleChange}
+            value={this.state.input}
+            placeholder={this.props.label}
+            type='text'
+            maxLength= "1">
           </input>
         </td>
       </>
