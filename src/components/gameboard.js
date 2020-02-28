@@ -2,6 +2,18 @@ import React, { Component } from 'react'
 
 class Gameboard extends Component {
 
+  state = {
+    input: ''
+  }
+
+  handleChange = (e) => {
+    const userInput = e.target.value;
+
+    this.setState({
+      input: userInput
+    })
+  }
+
   renderBoard = () => {
 
     let boardRows = this.props.board.map((row, index) => {
@@ -10,7 +22,7 @@ class Gameboard extends Component {
             return <td key={index} className="empty"> </td>
           } else {
             let label = null
-            let label2 = null 
+            let label2 = null
             if (cell.includes(',')) {
                label = parseInt(cell.split(',')[0])
                label2 = parseInt(cell.split(',')[1])
@@ -18,7 +30,14 @@ class Gameboard extends Component {
                label = parseInt(cell)
             }
 
-            return <td key={label} className="input"><input placeholder={label} type='text' maxlength= "1"></input> </td>
+            return <td key={label} className="input">
+              <input onChange={this.handleChange}
+                    value={this.state.input}
+                    placeholder={label}
+                    type='text'
+                    maxlength= "1">
+              </input>
+            </td>
           }
         })
          return <tr key={index}>{boardCells}</tr>
