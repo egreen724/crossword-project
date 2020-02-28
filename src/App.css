@@ -49,6 +49,10 @@ td {
   padding: 15px;
 }
 
+label {
+  position: absolute;
+}
+
 input {
   border: none;
   width: 40px;
@@ -56,7 +60,7 @@ input {
   margin: 0px;
   padding: 2px;
   font-size: 2em;
-  text-align: center; 
+  text-align: center;
 }
 
 input[type=text]:focus {

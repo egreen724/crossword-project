@@ -19,15 +19,15 @@ class Square extends Component {
     // add logic to move to next input and a callback function to pass answer up to parent
   }
 
-
   render() {
     return(
       <>
+
         <td key={this.props.label} className="input">
+          <label> {this.props.label}</label>
           <input
             onChange={this.handleChange}
             value={this.state.input}
-            placeholder={this.props.label}
             type='text'
             maxLength= "1">
           </input>

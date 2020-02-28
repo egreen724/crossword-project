@@ -20,10 +20,7 @@ class Gameboard extends Component {
             } else {
                label = parseInt(cell)
             }
-
             return <Square setUserAnswer={this.props.setUserAnswer} key={index} label={label} />
-
-
           }
         })
          return <tr key={index}>{boardCells}</tr>
